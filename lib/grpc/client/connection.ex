@@ -450,7 +450,7 @@ defmodule GRPC.Client.Connection do
          %__MODULE__{
            base_state
            | virtual_channel: ch,
-             real_channels: %{"#{host}:#{port}" => ch}
+             real_channels: %{"#{host}:#{port}" => {:ok, ch}}
          }}
 
       {:error, reason} ->
